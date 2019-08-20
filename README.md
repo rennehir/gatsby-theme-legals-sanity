@@ -1,3 +1,5 @@
+WIP: Working on converting [gatsby-theme-legals-prismic](https://github.com/littleplusbig/gatsby-theme-legals-prismic) to use [Sanity](https://www.sanity.io/) as a source of content.
+
 ![Mockups of gatsby-theme-legals-prismic in action](https://raw.githubusercontent.com/AllanPooley/gatsby-theme-legals-demo/master/src/assets/images/gatsby-theme-legals-prismic-mockup.jpg)
 
 # Gatsby Theme Legals Prismic
