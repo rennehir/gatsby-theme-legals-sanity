@@ -39,6 +39,7 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@mdx-js/react": "^1.0.27",
+    "@sanity/block-content-to-react": "^2.0.6",
     "gatsby-plugin-theme-ui": "^0.2.25",
     "gatsby-source-prismic": "^2.3.0-alpha.3",
     "gatsby-source-sanity": "^5.0.2",

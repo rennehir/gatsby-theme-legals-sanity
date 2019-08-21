@@ -16,8 +16,9 @@ const scrollToPageSection = (event, index, sectionTitle) => {
 export const LegalPageNavigation = props => {
   const { activeSection, sections } = props;
   const [navOpen, setNavOpen] = useState(false);
-  const sectionTitles =
-    sections && sections.map(section => section.sectionHeading);
+
+  const sectionTitles = sections && sections.map(section => section.heading);
+
   useEffect(() => {
     const navChecker = async () => {
       if (navOpen) setNavOpen(false);
@@ -27,6 +28,7 @@ export const LegalPageNavigation = props => {
       if (isClient) window.addEventListener("scroll", navChecker);
     };
   });
+
   return (
     <nav
       className="legal-page-navigation"

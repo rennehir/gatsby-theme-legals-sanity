@@ -52,7 +52,7 @@ const LegalPageTemplate = props => {
     }
   } = props;
 
-  const { pageTitle, sections } = pageData;
+  const { pageTitle, _rawSections: sections } = pageData;
 
   return (
     <Styled.root>
@@ -84,14 +84,7 @@ export const pageQuery = graphql`
     }
     page: sanityLegal(id: { eq: $id }) {
       pageTitle: title
-      sections {
-        sectionHeading: heading
-        content {
-          children {
-            text
-          }
-        }
-      }
+      _rawSections
     }
   }
 `;

@@ -11,7 +11,8 @@ export const NavigationItem = ({
   <li
     className="nav-item"
     sx={{
-      marginBottom: "30px"
+      marginBottom: "30px",
+      listStyle: "none"
     }}
   >
     <button

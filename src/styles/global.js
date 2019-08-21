@@ -1,5 +1,5 @@
-import theme from '../styles/theme'
-import { createGlobalStyle } from 'styled-components'
+import theme from "../styles/theme";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -36,8 +36,9 @@ const GlobalStyle = createGlobalStyle`
       overflow-x: hidden;
     }
   }
-  ol, ul, li {
-    list-style: none;
+  ol, ul {
+    margin: 1em 0;
+    padding-left: 2em;
   }
   blockquote, q {
     quotes: none;
@@ -139,5 +140,5 @@ const GlobalStyle = createGlobalStyle`
   body:not(.user-is-tabbing) a:focus  {
     outline: none;
   }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

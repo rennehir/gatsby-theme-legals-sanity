@@ -4,9 +4,11 @@ import { getSectionId } from "../helpers";
 import { InView } from "react-intersection-observer";
 import { Styled } from "theme-ui";
 
+import BlockContent from "./BlockContent";
+
 export const LegalPageSection = ({ index, section, sectionInViewHandler }) => {
-  const { sectionHeading, content } = section;
-  const sectionId = getSectionId(index, sectionHeading);
+  const { heading, content } = section;
+  const sectionId = getSectionId(index, heading);
 
   return (
     <InView
@@ -26,11 +28,9 @@ export const LegalPageSection = ({ index, section, sectionInViewHandler }) => {
           marginBottom: "30px"
         }}
       >
-        {sectionHeading}
+        {heading}
       </Styled.h2>
-      {content.map(c =>
-        c.children.map(child => <Styled.p>{child.text}</Styled.p>)
-      )}
+      <BlockContent blocks={content} />
     </InView>
   );
 };

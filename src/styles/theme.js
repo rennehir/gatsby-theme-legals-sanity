@@ -1,5 +1,5 @@
 export const theme = {
-  space: [0, 4, 8, 16, 32],
+  space: [0, 4, 8, 16, 32, 64],
   breakpoints: ["500px", "800px", "1080px"],
   fonts: {
     body: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
@@ -42,8 +42,12 @@ export const theme = {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      color: "text"
+      color: "text",
+      marginBottom: 3
     }
+  },
+  listStyles: {
+    marginBottom: 3
   },
   styles: {
     root: {
@@ -77,6 +81,19 @@ export const theme = {
     },
     p: {
       marginBottom: 3
+    },
+    strong: {
+      fontWeight: "bold"
+    },
+    em: {
+      fontStyle: "italic",
+      fontWeight: "medium"
+    },
+    ul: {
+      variant: "listStyles",
+      li: {
+        color: "primary"
+      }
     }
   }
 };

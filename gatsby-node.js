@@ -5,10 +5,16 @@ const wrapper = promise =>
     return result;
   });
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }, themeOptions) => {
   const { createPage } = actions;
 
+  const legalPagesListTemplate = require.resolve("./src/templates/list.js");
   const legalPageTemplate = require.resolve("./src/templates/legal.js");
+
+  createPage({
+    path: themeOptions.homePath,
+    component: legalPagesListTemplate
+  });
 
   const legalPages = await wrapper(
     graphql(`
@@ -32,7 +38,6 @@ exports.createPages = async ({ graphql, actions }) => {
   /* ---------------------------------------------
   = Create an individual page for each Information page =
   ----------------------------------------------- */
-
   legalPageList.forEach(edge => {
     // The uid you assigned in Prismic is the slug!
     createPage({
