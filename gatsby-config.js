@@ -1,24 +1,27 @@
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = ({
-  prismicRepositoryName,
-  prismicAccessToken,
-  siteName = null,
-  homePath = '/',
+  sanityProjectId,
+  sanityDataset,
+  sanityToken,
+  siteName,
+  homePath = "/"
 }) => ({
   siteMetadata: {
     homePath,
-    siteName,
+    siteName
   },
   plugins: [
-    'gatsby-plugin-theme-ui',
+    "gatsby-plugin-theme-ui",
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: "gatsby-source-sanity",
       options: {
-        repositoryName: prismicRepositoryName,
-        accessToken: prismicAccessToken,
-        schemas: {
-          legal: require('./src/schemas/legal.json'),
-        },
-      },
-    },
-  ],
-})
+        projectId: sanityProjectId,
+        dataset: sanityDataset,
+        token: sanityToken,
+        watchMode: !isProd,
+        overlayDrafts: !isProd
+      }
+    }
+  ]
+});
